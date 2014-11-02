@@ -6,8 +6,10 @@
 </head>
 <body>
 	<svg id="svg" width="500px" height="500px"></svg>
-	<svg id="pattern">
-		
+	<svg width="0" height="0">
+		<pattern  id="pattern" patternUnits="userSpaceOnUse" x="0" y="0" width="10" height="10" viewBox="0 0 10 10">
+			<path d="M-5,0,10,15M0-5,15,10" stroke="#fff" stroke-width="5"></path>
+		</pattern>
 	</svg>
 </body>
 <script src="snap.svg-min.js"></script>
@@ -26,8 +28,8 @@
 		fill: '#fff'
 	});
 	bigCircle.attr({
-		mask: disc
-	});
+		mask: disc		//遮住他
+	});		
 	smallCircle.animate({r: 50}, 1000);
 	disc.select("circle:nth-child(2)").animate({r: 50}, 1000);
 	var p = s.path("M10,-5L-10,15M15,0L0,15M0,-5L-20,15").attr({
@@ -39,6 +41,11 @@
 	bigCircle.attr({
 		fill: p
 	});
-
+	disc.attr({
+		fill: Snap("#pattern")
+	});
+	disc.attr({
+		fill: 'r()#fff-#000'
+	});
 </script>
 </html>
