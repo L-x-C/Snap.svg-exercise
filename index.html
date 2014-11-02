@@ -51,10 +51,11 @@
 		fill: 'R(150, 150, 100)#fff-#000'
 	});
 	p.select("path").animate({stroke: 'blue'}, 1000);
-	Snap.load("mascot.svg", function(f){
+	Snap.load("mascot.svg", function(f){	//必须要服务器环境
 		g = f.select("g");
 		s.append(g);
 		g.drag();
 	});
+	s.text(200, 100, "鳄鱼可拖动！！！")
 </script>
 </html>
