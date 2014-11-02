@@ -51,5 +51,10 @@
 		fill: 'R(150, 150, 100)#fff-#000'
 	});
 	p.select("path").animate({stroke: 'blue'}, 1000);
+	Snap.load("mascot.svg", function(f){
+		g = f.select("g");
+		s.append(g);
+		g.drag();
+	});
 </script>
 </html>
